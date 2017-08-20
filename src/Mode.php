@@ -62,6 +62,11 @@ class Mode
         self::TRUNCATE_FOR_WRITING_PLUS_READING
     ];
 
+    protected static $appendingMode = [
+        self::APPEND_WRITING,
+        self::APPEND_WRITING_PLUS_READING,
+    ];
+
     public function __construct(string $mode)
     {
         $this->setMode($mode);
@@ -76,6 +81,11 @@ class Mode
         $this->mode = $mode;
     }
 
+    public function getMode(): string
+    {
+        return $this->mode;
+    }
+
     public function isReading(): bool
     {
         return in_array($this->mode, self::$readingModes);
@@ -84,5 +94,10 @@ class Mode
     public function isWriting(): bool
     {
         return in_array($this->mode, self::$writingModes);
+    }
+
+    public function isAppending(): bool
+    {
+        return in_array($this->mode, self::$appendingMode);
     }
 }

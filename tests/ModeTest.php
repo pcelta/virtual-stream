@@ -110,5 +110,45 @@ class ModeTest extends TestCase
         ];
     }
 
+    /**
+     * @dataProvider notAppendingModeProvider
+     */
+    public function testIsAppendingShouldReturnFalseWhenItIsNotAppending($notAppendingMode)
+    {
+        $mode = new Mode($notAppendingMode);
+        $result = $mode->isAppending();
+        $this->assertFalse($result);
+    }
+
+    public static function notAppendingModeProvider()
+    {
+        return [
+            ['r+'],
+            ['w'],
+            ['w+'],
+            ['c'],
+            ['c+'],
+            ['x'],
+            ['x+'],
+        ];
+    }
+
+    /**
+     * @dataProvider appendingModeProvider
+     */
+    public function testIsAppendingShouldReturnTrueWhenItIsAppending($appendingMode)
+    {
+        $mode = new Mode($appendingMode);
+        $result = $mode->isAppending();
+        $this->assertTrue($result);
+    }
+
+    public static function AppendingModeProvider()
+    {
+        return [
+            ['a'],
+            ['a+'],
+        ];
+    }
 }
 
