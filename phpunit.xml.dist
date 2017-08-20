@@ -11,7 +11,7 @@
          syntaxCheck="false"
         >
     <testsuites>
-        <testsuite name="Cache Service Provider">
+        <testsuite name="Virtual Stream Suite">
             <directory>./tests</directory>
         </testsuite>
     </testsuites>
