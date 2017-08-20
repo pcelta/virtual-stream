@@ -10,7 +10,7 @@ interface StreamWrapperInterface
 
     public function stream_eof(): bool;
 
-    public function stream_seek(int $offset , int $whence = SEEK_SET);
+    public function stream_seek(int $offset, int $whence = SEEK_SET);
 
     public function stream_flush();
 

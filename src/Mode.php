@@ -3,7 +3,6 @@
 
 namespace Pcelta\VirtualStream;
 
-
 class Mode
 {
     /**

@@ -83,7 +83,7 @@ class Stream implements StreamWrapperInterface
         return $this->pointer > strlen($this->content);
     }
 
-    public function stream_seek(int $position , int $whence = SEEK_SET)
+    public function stream_seek(int $position, int $whence = SEEK_SET)
     {
         $this->pointer = $position;
     }
