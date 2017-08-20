@@ -16,3 +16,12 @@ tools:
     php_cpd: true
     php_pdepend: true
     sensiolabs_security_checker: true
+
+build:
+    tests:
+        override:
+            -
+                command: vendor/bin/phpunit  --coverage-clover=my-coverage-file --configuration=app/phpunit.xml.dist
+                coverage:
+                    file: my-coverage-file
+                    format: php-clover
